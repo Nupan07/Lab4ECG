@@ -1,0 +1,99 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from scipy.signal import butter, filtfilt, find_peaks
+import pywt  # Biblioteca para la transformada wavelet
+
+archivo_csv = "C:/Users/valen/Downloads/senalecg2"  # Cargar señal
+data = pd.read_csv(archivo_csv)
+
+
+tiempo = data.iloc[:, 0].values  
+ecg_signal = data.iloc[:, 1].values  
+
+# ---- Aplicar filtro pasa-bajos ----
+def filtro_pasa_bajos(señal, fs, fc):
+    w = fc / (fs / 2)  # Frecuencia de corte
+    b, a = butter(4, w, 'low')  # Filtro Butterworth de 4to orden
+    señal_filtrada = filtfilt(b, a, señal)  # Aplicación del filtro
+    return señal_filtrada
+
+fs = 1000  # Frecuencia de muestreo 
+fc = 30  # Frecuencia de corte
+ecg_filtrada = filtro_pasa_bajos(ecg_signal, fs, fc)
+
+# ---- Encontrar picos R ----
+peaks, _ = find_peaks(ecg_filtrada, height=0.5)
+
+# Calcular intervalos R-R
+rr_intervals = np.diff(peaks) / fs  # Intervalos R-R en segundos
+
+# Calcular parámetros de HRV
+media_rr = np.mean(rr_intervals)  # Media de los intervalos R-R
+desviacion_estandar_rr = np.std(rr_intervals)  # Desviación estándar de los intervalos R-R
+
+# Mostrar resultados de HRV
+print(f'Número de intervalos R-R: {len(rr_intervals)}')
+print(f'Media de intervalos R-R: {media_rr:.3f} s')
+print(f'Desviación estándar de intervalos R-R: {desviacion_estandar_rr:.3f} s')
+print(f'Intervalos R-R (en segundos): {rr_intervals}')  # Mostrar los intervalos R-R
+
+#  Transformada Wavelet de Morlet ----
+wavelet = 'cmor1.5-1.0'  # Wavelet Morlet
+escalas = np.arange(1, 128)
+
+# ---- Parámetros para la Ventana Desplazable ----
+tamano_ventana = 5000  # Tamaño de la ventana en puntos
+desplazamiento = 1000
+
+# ---- Recorrer la señal en ventanas ----
+for inicio in range(0, len(tiempo) - tamano_ventana, desplazamiento):
+    fin = inicio + tamano_ventana  
+    ventana_tiempo = tiempo[inicio:fin]  
+    ventana_senal = ecg_filtrada[inicio:fin]  
+
+    # ---- Aplicar la Transformada Wavelet  ----
+    coeficientes, _ = pywt.cwt(ventana_senal, escalas, wavelet, sampling_period=1/fs)
+
+    # ---- Graficar los resultados de cada ventana ----
+    plt.figure(figsize=(15, 10))
+
+    # Gráfico 1: Señal Original en la Ventana
+    plt.subplot(3, 1, 1)
+    plt.plot(ventana_tiempo, ecg_signal[inicio:fin], color='dodgerblue', linewidth=1.0)
+    plt.title(f'Señal ECG Original (Ventana {inicio}-{fin})')
+    plt.xlabel('Tiempo (s)')
+    plt.ylabel('Amplitud')
+    plt.grid(True)
+
+    # Gráfico 2
+    plt.subplot(3, 1, 2)
+    plt.plot(ventana_tiempo, ventana_senal, color='seagreen', linewidth=1.0)
+    plt.title('')
+    plt.xlabel('Tiempo (s)')
+    plt.ylabel('Amplitud')
+    plt.grid(True)
+
+    # Gráfico 3: Espectrograma de la Transformada Wavelet
+    plt.subplot(3, 1, 3)
+    plt.imshow(np.abs(coeficientes), aspect='auto', extent=[ventana_tiempo[0], ventana_tiempo[-1], 
+              escalas.max(), escalas.min()], cmap='jet')
+    plt.title('Espectrograma - Transformada Wavelet Morlet')
+    plt.xlabel('Tiempo (s)')
+    plt.ylabel('Escalas')
+    plt.colorbar(label='Magnitud')
+
+    # ---- Mostrar las gráficas para la ventana actual ----
+    plt.tight_layout()
+    plt.show()
+
+# Graficar los picos R en la señal filtrada
+plt.figure(figsize=(12, 6))
+plt.plot(tiempo, ecg_filtrada, color='seagreen', linewidth=1.0)
+plt.plot(tiempo[peaks], ecg_filtrada[peaks], "x", color='red', markersize=8, label='Picos R')
+plt.title('Señal ECG Filtrada con Picos R')
+plt.xlabel('Tiempo (s)')
+plt.ylabel('Amplitud')
+plt.grid(True)
+plt.legend()
+plt.show()
