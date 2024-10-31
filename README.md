@@ -75,7 +75,7 @@ Configuración de la adquisición en tiempo real
 El módulo AD8232 se conecta al ESP32, utilizando el pin D35(Utilizar el PIN que deses para la conexion serial) para recibir la señal de ECG. Se verifica que todas las conexiones de alimentación y tierra estén adecuadamente configuradas para garantizar una captura de señal sin interferencias.
 Colocación de Electrodos: Los electrodos se colocan en el pecho del sujeto, siguiendo el esquema de derivaciones estándar, para obtener una señal ECG de calidad.
 
-![] (https://github.com/Nupan07/Lab4ECG/blob/main/Colocacion%20electrodos.png)
+![](https://github.com/Nupan07/Lab4ECG/commit/95e0479adef87cf0c30a728a6d9fe3451cf70fd6).
 
 
 Adquisición en Tiempo Real: El ESP32 captura la señal ECG y la transmite a una computadora o dispositivo donde se ejecuta un software de visualización y análisis en tiempo real, permitiendo una observación continua de la señal.
