@@ -149,8 +149,13 @@ Este número representa la cantidad total de intervalos de tiempo medidos entre 
 ### Media de intervalos R-R: 0.214 s
 La media de 0.214 segundos sugiere un ritmo cardíaco promedio de aproximadamente 140 latidos por minuto (lpm). Este cálculo se realiza mediante la fórmula:  Frecuencia cardíaca = 60 / Media R-R (s)
 Un ritmo cardíaco elevado puede ser indicativo de un estado de actividad o estrés, dependiendo del contexto en el que se tomó la señal.
+
+
 **Desviación estándar:**  0.000 s
 La desviación estándar, que mide la variabilidad de los intervalos R-R, resulta ser 0.000 s. Esto indica que todos los intervalos son prácticamente idénticos, sugiriendo un ritmo cardíaco extremadamente regular. Esta uniformidad podría ser característica de ciertas condiciones fisiológicas, como el reposo o la adaptación a un régimen de ejercicio específico.
+
+
+
 **RMSSD (variabilidad de corto plazo):** 0.001 s
 El RMSSD es un indicador de la variabilidad de la frecuencia cardíaca a corto plazo. Un valor de 0.001 s sugiere que existe poca variabilidad en los intervalos R-R, lo que puede estar relacionado con una respuesta de estrés o falta de adaptabilidad en el sistema cardiovascular. Esta métrica es crucial para entender la función autonómica del corazón.
 Diferencias consecutivas > 30 ms: 0.3
