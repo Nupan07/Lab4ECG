@@ -156,6 +156,7 @@ Estas son algunas de los resultados y ventanas realizadas ya que son demasiadas
 ![](https://github.com/Nupan07/Lab4ECG/blob/main/Resultados.png)
 ![](https://github.com/Nupan07/Lab4ECG/blob/main/Ventana%201000-6000.png)
 ![](https://github.com/Nupan07/Lab4ECG/blob/main/Ventana69000-74000.png)
+![](https://github.com/Nupan07/Lab4ECG/blob/main/9400-14000.png)
 
 ###  Espectrograma
   ![](https://github.com/Nupan07/Lab4ECG/blob/main/Espectograma.png)
