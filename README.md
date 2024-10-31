@@ -161,33 +161,33 @@ Estas son algunas de los resultados y ventanas realizadas ya que son demasiadas
 ###  Espectrograma
   ![](https://github.com/Nupan07/Lab4ECG/blob/main/Espectograma.png)
 
-Número de intervalos R-R: 349
-Media de intervalos R-R: 0.214 s
-Desviación estándar: 0.002 s
-RMSSD (variabilidad de corto plazo): 0.001 s
-Diferencias consecutivas > 30 ms: 0.3
-Porcentaje de diferencias > 30 ms: 0.09 %
-
 ### Número de intervalos R-R: 349
+
+### Media de intervalos R-R: 0.814 s
+
+### Desviación estándar: 0.002 s
+
+**RMSSD (variabilidad de corto plazo):** 0.050 s
+**Diferencias consecutivas > 30 ms:** 0.3
+**Porcentaje de diferencias > 30 ms:** 0.09 %
+
+**Número de intervalos R-R: 349**
 Este número representa la cantidad total de intervalos de tiempo medidos entre picos R consecutivos. La identificación de 349 intervalos indica que se ha realizado una detección eficaz de los picos en la señal analizada.
 
-### Media de intervalos R-R: 0.214 s
-La media de 0.214 segundos sugiere un ritmo cardíaco promedio de aproximadamente 140 latidos por minuto (lpm). Este cálculo se realiza mediante la fórmula:  Frecuencia cardíaca = 60 / Media R-R (s)
-Un ritmo cardíaco elevado puede ser indicativo de un estado de actividad o estrés, dependiendo del contexto en el que se tomó la señal.
+**Media de intervalos R-R: 0.814 s**
+La media de 0.814 segundos sugiere un ritmo cardíaco promedio de aproximadamente 73.9 latidos por minuto (lpm). Este cálculo se realiza mediante la fórmula: Frecuencia cardíaca = 60 / Media R-R (s). Un ritmo cardíaco más bajo puede estar asociado con un estado de reposo o una buena adaptación a un régimen de ejercicio.
 
+**Desviación estándar: 0.002 s**
+La desviación estándar, que mide la variabilidad de los intervalos R-R, resulta ser 0.002 s. Esto indica que los intervalos son muy similares entre sí, sugiriendo un ritmo cardíaco regular. Esta uniformidad podría ser característica de condiciones fisiológicas, como el reposo o la adaptación a un régimen de ejercicio específico.
 
-**Desviación estándar:**  0.000 s
-La desviación estándar, que mide la variabilidad de los intervalos R-R, resulta ser 0.000 s. Esto indica que todos los intervalos son prácticamente idénticos, sugiriendo un ritmo cardíaco extremadamente regular. Esta uniformidad podría ser característica de ciertas condiciones fisiológicas, como el reposo o la adaptación a un régimen de ejercicio específico.
+**RMSSD (variabilidad de corto plazo): 0.050 s**
+El RMSSD es un indicador de la variabilidad de la frecuencia cardíaca a corto plazo. Un valor de 0.050 s sugiere que hay cierta variabilidad en los intervalos R-R, lo que puede estar relacionado con una respuesta adaptativa en el sistema cardiovascular. Esta métrica es crucial para entender la función autonómica del corazón.
 
-
-
-**RMSSD (variabilidad de corto plazo):** 0.001 s
-El RMSSD es un indicador de la variabilidad de la frecuencia cardíaca a corto plazo. Un valor de 0.001 s sugiere que existe poca variabilidad en los intervalos R-R, lo que puede estar relacionado con una respuesta de estrés o falta de adaptabilidad en el sistema cardiovascular. Esta métrica es crucial para entender la función autonómica del corazón.
-Diferencias consecutivas > 30 ms: 0.3
+**Diferencias consecutivas > 30 ms: 0.3**
 Este valor representa la cantidad de diferencias entre intervalos R-R que superan el umbral de 30 ms. Un resultado de 0.3 indica que no se registraron diferencias significativas, lo que reafirma la estabilidad del ritmo cardíaco.
 
-**Porcentaje de diferencias > 30 ms:** 0.09 %
+**Porcentaje de diferencias > 30 ms: 0.09 %** 
 El porcentaje se calcula dividiendo el número de diferencias que superan los 30 ms por el total de intervalos R-R, multiplicado por 100. Con un valor de 0.09 %, se observa que solo una fracción mínima de los intervalos presenta variabilidad significativa, corroborando la conclusión anterior de un ritmo cardíaco estable.
 
-
+Los resultados obtenidos en el análisis de la variabilidad de la frecuencia cardíaca (HRV) revelan un ritmo cardíaco bastante regular, con una media de intervalos R-R de 0.814 segundos, lo que corresponde a una frecuencia cardíaca promedio de aproximadamente 73.9 lpm. La baja desviación estándar (0.002 s) y el RMSSD (0.050 s) sugieren que existe una variabilidad limitada en los intervalos R-R, indicando un estado de estabilidad en la función cardiovascular.
 
