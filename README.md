@@ -1,6 +1,11 @@
 📝 Descripción
 Este Laboratorio  implementa un sistema de captura y análisis de señales electrocardiográficas (ECG) utilizando el microcontrolador ESP32 y el módulo AD8232. El sistema permite analizar la variabilidad de la frecuencia cardíaca (HRV) mediante el procesamiento de los intervalos R-R y su análisis a través de la transformada wavelet.
 
+
+A continuacion se vera los pasos a seguir ante este laboratorio 
+![](https://github.com/Nupan07/Lab4ECG/blob/main/Diagrama%20Flujos.png)
+![](https://github.com/Nupan07/Lab4ECG/blob/main/Diagrama.png)
+
 ## Requisitos
 
 Este laboratorio requiere las siguientes bibliotecas:
