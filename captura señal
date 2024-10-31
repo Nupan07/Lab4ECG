@@ -1,0 +1,27 @@
+Codigo para la captura de la señal mediante ESP32 y AD8232
+import serial
+import time
+
+# Configura el puerto serie 
+port = 'COM5'  # Cambia esto según el puerto COM 
+baudrate = 115200
+output_file = 'ecg_data.txt'
+
+# Abre el puerto serie
+try:
+    ser = serial.Serial(port, baudrate)
+    time.sleep(2)  # Espera a que se establezca la conexión
+
+    # Abre el archivo para escribir
+    with open(output_file, 'w') as f:
+        print("Capturando datos ECG. Presiona Ctrl+C para detener.")
+        while True:
+            if ser.in_waiting > 0:
+                line = ser.readline().decode('utf-8').strip()  # Lee una línea del puerto serie
+                print(line)  # Imprime el valor en la consola
+                f.write(line + '\n')  # Guarda el valor en el archivo
+
+except KeyboardInterrupt:
+    print("Captura detenida.")
+finally:
+    ser.close()  # Cierra el puerto serie
