@@ -37,6 +37,9 @@ El sistema nervioso autónomo (SNA) es una parte del sistema nervioso que regula
 **Sistema nervioso simpático:** Activa la respuesta de “lucha o huida”, aumenta la frecuencia cardíaca y la presión arterial y prepara el cuerpo para situaciones estresantes.
 
 **Sistema nervioso parasimpático:** Promueve la respuesta de “descansar y digerir”, reduce la frecuencia cardíaca y promueve la relajación y la recuperación.
+
+
+
 **2. Variabilidad de la Frecuencia Cardíaca (HRV)**
 
 La Variabilidad de la Frecuencia Cardíaca (HRV) es una medida de la variación en el tiempo entre latidos sucesivos del corazón. Se considera un indicador importante de la salud del sistema cardiovascular y del estado del SNA. Una alta HRV generalmente se asocia con una buena salud y una mayor capacidad de adaptación al estrés, mientras que una baja HRV puede ser un signo de estrés crónico, fatiga o problemas de salud.
@@ -50,9 +53,18 @@ La variabilidad de la frecuencia cardíaca (HRV) es un indicador clave para eval
 Parámetros en el Dominio del Tiempo
 
 **RMSSD:** Variabilidad a corto plazo de intervalos R-R
+
+
+
 **Media R-R:** Promedio del tiempo entre latidos
+
+
 **SDNN:** Variabilidad global de intervalos R-R
+
+
 **pNN30/pNN50:** Porcentaje de diferencias consecutivas >30ms o >50ms
+
+
 
 **3. Transformada Wavelet**
 La Transformada Wavelet es una técnica de análisis matemático que permite descomponer una señal en sus componentes de frecuencia y temporal. A diferencia de la Transformada de Fourier, que solo proporciona información de frecuencia, la Transformada Wavelet ofrece una representación de la señal que es simultáneamente en el dominio del tiempo y en el dominio de la frecuencia. Esto es especialmente útil para señales no estacionarias, como las señales ECG.
@@ -62,9 +74,16 @@ La wavelet Morlet combina una onda sinusoidal y una envoltura gaussiana. Esto si
 **Bandas de Frecuencia (Análisis Wavelet)**
 
 Baja frecuencia (0.04 - 0.15 Hz): Actividad simpática
+
+
+
 Alta frecuencia (0.15 - 0.4 Hz): Tono parasimpático
 
+
 --> **Captura de la señal**
+
+
+
    **🛠️ Implementación**
 ESP32
 Módulo AD8232
